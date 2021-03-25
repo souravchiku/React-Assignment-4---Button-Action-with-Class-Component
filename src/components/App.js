@@ -4,19 +4,19 @@ import '../styles/App.css';
 class App extends Component {
     constructor(props) {
 		super(props);
-		this.state
+		this.state={
+			data:"",
+		}
 	};
-
 	
 
     render() {
     	return(
     		<div id="main">
 				{ /* Do not remove this main div!! */ }
-				<p id="para"></p>
-				<button id="click" onClick={()=>document.getElementById('para').innerHTML=" Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy"
-			
-			}>Update</button>
+				<p id="para"> {this.state.data}</p>
+				<button id="click" onClick={()=>this.setState({data:"Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy"})}>
+					Update</button>
     		</div>
     	);
     }
