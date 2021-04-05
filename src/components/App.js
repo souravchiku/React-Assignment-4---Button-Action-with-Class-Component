@@ -5,7 +5,7 @@ class App extends Component {
     constructor(props) {
 		super(props);
 		this.state={
-			data:"",
+			data:false,
 		}
 	};
 	
@@ -14,9 +14,15 @@ class App extends Component {
     	return(
     		<div id="main">
 				{ /* Do not remove this main div!! */ }
-				<p id="para"> {this.state.data}</p>
-				<button id="click" onClick={()=>this.setState({data:"Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy"})}>
-					Update</button>
+				
+				<button id="click" onClick={()=>this.setState({data:true})}>
+					Button</button>
+
+					<p id="para"> { 
+					
+					(this.state.data)&&<p>Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy</p>
+					
+					}</p>
     		</div>
     	);
     }
@@ -24,4 +30,3 @@ class App extends Component {
 
 
 export default App;
-
